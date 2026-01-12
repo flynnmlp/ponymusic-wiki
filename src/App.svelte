@@ -36,6 +36,7 @@
 	$: exportProgressPercentText = 100 * exportProgressPercent.toFixed(2) + "%";
 
 	let showAllTracks =  Number(localStorage.SHOW_ALL_TRACKS || 0);
+	let showMobileQuickButtons =  Number(localStorage.SHOW_MOBILE_BUTTONS || 0);
 
 	let filters = {};
 
@@ -547,6 +548,15 @@
 			<p>These hidden tracks can be viewed by visiting their URLs directly or by turning on this setting</p>
 
 			<PonyRefs />
+
+			<h2>Additional Options</h2>
+			<h3>Show Mobile Quick Buttons</h3>
+			<RadioGroup 
+				checked={showMobileQuickButtons}
+				options={["No", "Yes"]} 
+				on:change={(e) => {localStorage.SHOW_MOBILE_BUTTONS = e.detail}}
+				/>
+			<p>These are used to quickly randomize tracks on mobile for easy shuffle listening</p>
 
 		</div>
 	

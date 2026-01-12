@@ -942,6 +942,15 @@
 		{/if}
 
 		{#if mode==0}
+
+			{#if localStorage.SHOW_MOBILE_BUTTONS == "1"}
+				<div style="margin-top: 20px; margin-bottom: 20px;">
+					<button>Skip</button>
+					<button>Star</button>
+					<button>Next</button>
+				</div>
+			{/if}
+
 			{#if track.originalTracks && track.originalTracks.length > 0}
 				<h2 class="subh2">Original track</h2>
 
